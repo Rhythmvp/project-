@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Software Solutions</title>
+    <link rel="stylesheet" href="software.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">HR Software Hub</div>
+        <nav class="nav-links">
+            <a href="admin.html">Home</a>
+            <a href="#">Solutions</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Find the Perfect HR Software Solution</h1>
+            <p>Browse through our curated list of top HR software solutions to streamline your HR processes</p>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <button class="category-btn active">All</button>
+            <button class="category-btn">Payroll</button>
+            <button class="category-btn">Performance Management</button>
+            <button class="category-btn">Attendance</button>
+            <button class="category-btn">Recruitment</button>
+            <button class="category-btn">Employee Engagement</button>
+            <button class="category-btn">HRIS</button>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="search-filter">
+            <div class="search-bar">
+                <input type="text" placeholder="Search by name, feature, or keyword...">
+                <button>Search</button>
+            </div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="company-filter">Company</label>
+                    <select id="company-filter">
+                        <option value="">All Companies</option>
+                        <option value="workday">Workday</option>
+                        <option value="bamboohr">BambooHR</option>
+                        <option value="adp">ADP</option>
+                        <option value="gusto">Gusto</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="pricing-filter">Pricing</label>
+                    <select id="pricing-filter">
+                        <option value="">All Pricing</option>
+                        <option value="free">Free/Freemium</option>
+                        <option value="low">$1 - $10 per employee</option>
+                        <option value="medium">$11 - $20 per employee</option>
+                        <option value="high">$21+ per employee</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="features-filter">Features</label>
+                    <select id="features-filter">
+                        <option value="">All Features</option>
+                        <option value="mobile">Mobile App</option>
+                        <option value="integration">Third-party Integration</option>
+                        <option value="reporting">Advanced Reporting</option>
+                        <option value="compliance">Compliance Management</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Software Listings -->
+        <section class="software-grid" id="software-grid">
+            <!-- Software cards will be dynamically generated here -->
+        </section>
+        
+        <!-- Sync Status and Controls -->
+        <section class="sync-controls">
+            <div id="sync-status">Last synced: Never</div>
+            <button id="force-sync-btn" class="btn">Force Sync Now</button>
+        </section>
+    </div>
+
+    <!-- Software Detail Modal -->
+    <div class="modal" id="software-detail-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="software-details">
+                <div class="detail-header">
+                    <div class="detail-logo">
+                        <img src="/api/placeholder/400/320" alt="Software Logo">
+                    </div>
+                    <div class="detail-title">
+                        <h2>Software Name</h2>
+                        <span class="detail-category">Category</span>
+                    </div>
+                </div>
+                <div class="detail-main">
+                    <div class="detail-left">
+                        <div class="detail-description">
+                            <h3>About</h3>
+                            <p>Detailed description of the software and its main benefits will appear here. This section provides an overview of what the software does and how it can help HR departments.</p>
+                        </div>
+                        <div class="detail-features">
+                            <h3>Key Features</h3>
+                            <ul class="feature-list">
+                                <!-- Features will be dynamically loaded -->
+                            </ul>
+                        </div>
+                        <div class="detail-screenshots">
+                            <h3>Screenshots</h3>
+                            <div class="screenshots">
+                                <!-- Screenshots will be dynamically loaded -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-right">
+                        <div class="detail-pricing">
+                            <h3>Pricing</h3>
+                            <div class="pricing-table">
+                                <table>
+                                    <!-- Pricing will be dynamically loaded -->
+                                </table>
+                            </div>
+                        </div>
+                        <div class="detail-actions">
+                            <a href="#" class="btn btn-demo">Request a Demo</a>
+                            <a href="#" class="btn btn-price">Get a Discounted Price</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 HR Software Hub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin.js">     </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Software Hub - Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">HR Software Hub Admin</div>
+        <nav class="nav-links">
+            <a href="index.html">Public Site</a>
+            <a href="#">Dashboard</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+<form >
+    <!-- Main Content -->
+    <div class="container">
+        <div class="admin-panel">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active" data-tab="software-listings">Software Listings</a></li>
+                    <li><a href="#" data-tab="categories">Categories</a></li>
+                    <li><a href="#" data-tab="settings">Settings</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content">
+                <!-- Software Listings Tab -->
+                <div class="tab-content active" id="software-listings">
+                    <div class="page-title">
+                        <h2>Software Listings</h2>
+                        <button type="submit" class="btn-add" id="add-software-btn">+ Add New Software</button>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message">
+                        Operation completed successfully!
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="error-message" id="error-message">
+                        An error occurred. Please try again.
+                    </div>
+
+                    <!-- Software Table -->
+                    <table class="software-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Features</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="software-table-body">
+                            <!-- Table rows will be populated by JS -->
+                        </tbody>
+                    </table>
+
+                    <!-- Software Form (Create/Edit) -->
+                    <div class="form-container" id="software-form">
+                        <h3 class="form-title">Add New Software</h3>
+                        <form id="software-form-element">
+                            <input type="hidden" id="software-id" value="">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="software-name">Software Name</label>
+                                    <!-- <input type="text" id="software-name" class="form-control" required> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="software-category">Category</label>
+                                    <!-- <select id="software-category" class="form-control" required> -->
+                                        <option value="">Select a category</option>
+                                        <!-- Categories will be populated from JS -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="software-description">Description</label>
+                                <!-- <textarea id="software-description" class="form-control" required></textarea> -->
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Features</label>
+                                <div id="features-container" class="features-container">
+                                    <div class="feature-row">
+                                        <input type="text" class="form-control feature-input" placeholder="Enter a feature">
+                                        <button type="button" class="btn-remove-feature">×</button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-feature-btn" class="btn-add-feature">+ Add Feature</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Pricing Plans</label>
+                                <div id="pricing-container" class="pricing-table-container">
+                                    <div class="pricing-row">
+                                        <input type="text" class="form-control pricing-plan" placeholder="Plan Name">
+                                        <input type="text" class="form-control pricing-price" placeholder="Price">
+                                        <button type="button" class="btn-remove-pricing">×</button>
+                                    </div>
+                                </div>
+                                <button type="button" id="add-pricing-btn" class="btn-add-pricing">+ Add Pricing Plan</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="software-logo">Logo URL</label>
+                                <input type="text" id="software-logo" class="form-control" placeholder="Enter image URL">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Screenshots</label>
+                                <div id="screenshots-container" class="screenshots-container">
+                                    <!-- Screenshot items will be added here -->
+                                </div>
+                                <button type="button" id="add-screenshot-btn" class="btn-add-screenshot">+ Add Screenshot</button>
+                            </div>
+                            
+                            <div class="preview-section">
+                                <h3 class="preview-title">Preview</h3>
+                                <div class="preview-card">
+                                    <div class="preview-card-img">
+
+                                    </div>
+                                    <div class="preview-card-content">
+                                        <h3 class="preview-card-title" id="preview-title">Software Name</h3>
+                                        <span class="preview-card-category" id="preview-category">Category</span>
+                                        <div class="preview-card-features" id="preview-features">
+                                            <!-- Preview features will be added here -->
+                                        </div>
+                                        <div class="preview-card-footer">
+                                            <a href="#" class="preview-btn preview-btn-demo">Request Demo</a>
+                                            <a href="#" class="preview-btn preview-btn-price">Get Price</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">Save Software</button>
+                                <button type="button" class="btn-cancel" id="cancel-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Categories Tab -->
+                <div class="tab-content" id="categories">
+                    <div class="page-title">
+                        <h2>HR Software Categories</h2>
+                        <button type="submit" class="btn-add" id="add-category-btn">+ Add New Category</button>
+                    </div>
+                    
+                    <table class="categories-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Category Name</th>
+                                <th>Software Count</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categories-table-body">
+                            <!-- Categories will be populated by JS -->
+                        </tbody>
+                    </table>
+
+                    <!-- Category Form (Create/Edit) -->
+                    <div class="form-container" id="category-form">
+                        <h3 class="form-title">Add New Category</h3>
+                        <form id="category-form-element">
+                            <input type="hidden" id="category-id" value="">
+                            
+                            <div class="form-group">
+                                <label for="category-name">Category Name</label>
+                                <input type="text" id="category-name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category-description">Description</label>
+                                <textarea id="category-description" class="form-control"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">Save Category</button>
+                                <button type="button" class="btn-cancel" id="cancel-category-form-btn">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Settings Tab -->
+                <div class="tab-content" id="settings">
+                    <div class="page-title">
+                        <h2>Site Settings</h2>
+                    </div>
+                    
+                    <form id="settings-form">
+                        <div class="form-group">
+                            <label for="site-title">Site Title</label>
+                            <input type="text" id="site-title" class="form-control" value="HR Software Hub">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="site-description">Site Description</label>
+                            <textarea id="site-description" class="form-control">Find the best HR software solutions for your business needs. Compare features, pricing, and reviews.</textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Contact Email</label>
+                            <input type="email" id="contact-email" class="form-control" value="contact@hrsoftwarehub.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="items-per-page">Items Per Page</label>
+                            <input type="number" id="items-per-page" class="form-control" value="12">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Save Settings</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    <!-- JavaScript for Interactive Features -->
+    <script src="js/admin.js">  
+             </script>
+   
+</body>
+</html>
